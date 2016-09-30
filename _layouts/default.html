@@ -1,6 +1,1457 @@
 <!DOCTYPE html>
 <html>
 
-  <p>HELLO THERE M8</p>
+  <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>My Notes</title>
+        <script src="code.js" type="text/javascript" charset="utf-8"></script>        
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script>
+            h1 {
+                color: red;
+                font-family: cursive;
+                font-size: 25px;
+            }
+            .notes {
+                color:black;
+                font-family:monospace, sans-serif, serif;
+                font-size:15px;
+            }
+            h2 {
+                color:black;
+                font-family:cursive, sans-serif, serif;
+                font-size:20px;
+            }
+            a:active {
+                color:blue;
+            }
+            a:hover {
+                color:blue;
+            }
+            a:link {
+                color:blue;
+            }
+            a:visited {
+                color:blue;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>My notes:</h1><br>
+        <a href=""><span style="text-decoration:none"> ----->> </span> Query in Webpages.</a>
+        <br><br>
+        <h3>script.JS</h3><br>
+        <li>
+            <a href="#1">"Rock Paper Scissors" - script.JS</a>
+        </li>
+        <li>
+            <a href="#2">"My first basic 'For' loop" - script.JS</a>
+        </li>
+        <li>
+            <a href="#3">"Name finder" - script.JS</a>
+        </li>
+        <li>
+            <a href="#4">"While, For and Do While loops" - script.JS</a>
+        </li>
+        <li>
+            <a href="#5">"Dragon Slaying Game" - script.JS</a>
+        </li>
+        <li>
+            <a href="#6">"Defeat the Troll! Choice-game" - script.JS</a>
+        </li>
+        <li>
+            <a href="#7">"Contact List" - script.JS</a>
+        </li>
+        <li>
+            <a href="#8">"BuzzFizz till 20" - script.JS</a>
+        </li>
+        <li>
+            <a href="#9">"BuzzFizz till 100 w/ .push" - script.JS</a>
+        </li>
+        <li>
+            <a href="#10">"Movie Reviews" - script.JS</a>
+        </li>
+        <li>
+            <a href="#11">"Basic Adress Book (3 Entries)" - script.JS</a>
+        </li>
+        <li>
+            <a href="#12">"Basic 'Hello'/string filter" - script.JS</a>
+        </li>
+        <li>
+            <a href="#13">"OOP Cash Register w/ Some Basic Functions" - script.JS</a>
+        </li>
+        <li>
+            <a href="#14">Formulas - script.JS</a>
+        </li>
+        <li>
+            <a href="#15">!DRY! "Playing with light switches" - script-JS</a>
+        </li>
+        <li>
+            <a href="#16">"Card Flipper with user input" - script.JS</a>
+        </li>
+        <li>
+            <a href="#17">"String Reverser 1-10 letters" - script.JS</a>
+        </li>
+        <li>
+            <a href="#18">"Password generator 10 letters" - script.JS</a>
+        </li>
+        <li>
+            <a href="#19">"Password Protection" w/ comments - script.JS</a>
+        </li>
+        <li>
+            <a href="#20">"Basic 10 words translator Dutch-German" w/ comments - script.JS</a>
+        </li>
+        <li>
+            <a href="#21">"Defeat the Cyclop! Game" w/ comments - script.JS</a>
+        </li>
+        <br><br><h3>python</h3><br><br>
+        
+        
+        
+        
+        
+        <h1>script.JS</h1>
+        <h2 id="1">1. "Rock Paper Scissors" - script.JS</h2>
+        <p class="notes">
+            var userChoice = prompt("Do you choose rock, paper or scissors?");
+console.log("You: " + userChoice);
+
+var computerChoice = Math.random();
+
+if (computerChoice < 0.34) {
+	   computerChoice = "rock";
+} else if(computerChoice <= 0.67) {
+	   computerChoice = "paper";
+} else {
+	   computerChoice = "scissors";
+} 
+console.log("Computer: " + computerChoice);
+
+var compare = function(choice1, choice2) {
+    
+    if(choice1 === choice2) {
+        return "The result is a tie!";
+    }
+    else if(choice1 === "rock") {
+        if(choice2 === "scissors") {
+            return "rock wins";
+        }
+        else{
+            return "paper wins";
+        }
+    }
+    else if(choice1 === "paper") {
+        if(choice2 === "rock") {
+            return "paper wins";
+        }
+        else{
+            return "scissors wins";
+        }
+    }
+    else if(choice1 === "scissors") {
+        if(choice2 === "rock") {
+            return "rock wins";
+        }
+        else{
+            return "scissors wins";
+        }
+    }
+    else{
+        return "Or you misspelled, or you chose something else besides 'rock', 'paper' or 'scissors'.";
+    }
+};
+
+compare(userChoice, computerChoice);
+        </p><br><br>
+        <h2 id="2">2. "My first basic 'For' loop" - script.JS</h2>
+        <p>
+            var name1 = ["Pip", "Dinozzo", "Streep"];
+var name2 = ["Pippi", "Abby", "Streepje"];
+
+for(var i = 0; i < name1.length; i++) {
+    console.log("I ship " + name1[i] + " with " + name2[i] + ".");
+    if(name1[i] === 0) {
+        console.log("----------");
+    }
+    else if(name1[i] === 1) {
+        console.log("----------");
+    }
+    else{
+        console.log("----------");
+    }
+}
+        </p><br><br>
+        <h2 id="3">3. "Name finder" - script.JS</h2>
+        <p>
+            var text = "Hello! My name is Pip! I think we haven't met before, have we? Well, the name Pip is very original, so yeah. If you heard the name Pip before, you probably also know me, Pip.";
+
+var myName = "Pip";
+var hits = [];
+
+for(var i = 0; i < text.length; i++) {
+    if(text[i] === myName[0]) {
+        for(var j = i; j < myName.length + i; j++) {
+            hits.push(myName);
+        }
+    }
+}
+
+if(hits.length === 0) {
+    console.log("Your name wasn't found!");
+}
+else{
+    console.log(hits);
+}
+        </p><br><br>
+        <h2 id="4">4. "While, For and Do While loops" - script.JS</h2>
+        <p>
+            var num = 1;
+var bonjour = false;
+
+for(var i = 1; i < 6; i++) {
+    console.log(i);
+}
+while(num < 6) {
+    console.log(num);
+    num++;
+}
+do{
+    console.log("Allowed to say bonjour? : " + bonjour);
+    if(bonjour === true) {
+        console.log("Bonjour, mon ami!");
+    }
+} while(bonjour);
+        </p><br><br>
+        <h2 id="5">5. "Dragon Slaying Game" - script.JS</h2>
+        <p>
+            var slaying = true;
+var youHit = Math.floor(Math.random() * 2);
+var damageThisRound = Math.floor(Math.random() * 5 + 2);
+var totalDamage = 0;
+var dragonDamage = Math.floor(Math.random() * 2 + 1);
+var health = 5;
+
+while(slaying) {
+    if(youHit) {
+        console.log("You succesfully hit The Dragon!");
+        totalDamage += damageThisRound;
+        console.log("You did " + totalDamage + " damage!");
+        if(totalDamage >= 5) {
+            console.log("Wow! You beat the dragon!");
+            slaying = false;
+        }
+        else{
+            youHit = Math.floor(Math.random() * 2);
+        }
+    }
+    else{
+        console.log("Oh no! The Dragon hit you!");
+        health -= dragonDamage;
+        console.log("The dragon did " + dragonDamage + " damage!");
+        if(health <= 0) {
+            console.log("The Dragon beat you! He will now destroy everthing!");
+            slaying = false;
+        }
+        else{
+        
+            youHit = Math.floor(Math.random() * 2);
+        }
+    }
+        
+}
+        </p><br><br>
+        <h2 id="6">6. "Defeat the Troll! Choice-game" - script.JS</h2>
+        <p>var user = prompt("Oh no! A Troll appeared before you! Are you gonna FIGHT, PAY or RUN?").toUpperCase();
+
+switch(user) {
+    case 'FIGHT':
+        var item = prompt("How brave! You see a BOTTLE OF WATER, a SWORD, a BOOK and a COIN. What do you choose to battle with?").toUpperCase();
+        var useOfItem = prompt("Are you going to TRHOW it or STAB the Troll with it?").toUpperCase();
+        
+        
+        
+        
+        
+        switch(item) {
+        case 'BOTTLE OF WATER':
+                    if(useOfItem === "TRHOW") {
+                        console.log("You threw the bottle of water, and made the Troll mad. He started yelling things, and beat you up...");
+                    }
+                    else{
+                        console.log("Neither you nor the Troll understood what the purpose was of stabbing with a BOTTLE OF WATER!!");
+                    }
+        break;
+        
+        
+        
+        
+        case 'SWORD':
+                if(useOfItem === 'TRHOW') {
+                    console.log("The sword fell way before it could hit the Troll. Sorry man, but throwing a sword.. dude?!");
+                }
+                else{
+                    confirm("The Troll shouted a curse, and curled up! The Troll disbanded in a ton of little ants, and only his belongings are left. But... you can only carry one thing... what are you going to take?");
+                    var prize = prompt("Are you going to take his COINS, his shining AMULET or NOTHING?").toUpperCase();
+                    switch(prize) {
+                        case 'COINS':
+                            console.log("You took the bag full of coins. When you got home, you made your family rich and two years later you became King!");
+                            console.log("");
+                            console.log("Congratulations! You made the best choices!");
+                            break;
+                        case 'AMULET':
+                            console.log("You took his shining amulet, wondering all day long what the strange signs written on the amulet could mean. It became night, and you fell asleep. You dreamed of the babies of the Troll, that were starving to death, because you killed their father. A weird creature appeared and said:'Because you killed a innocent Troll, you will now be sentenced to... DEATH!'. You didn't wake up... anymore...");
+                            break;
+                        case 'NOTHING':
+                            console.log("What a shame. You could have become rich, or took that very shiny, attractive amulet. Hmmm... amulet...");
+                            console.log("");
+                            console.log("When you reached home, you gathered around your kids and wife, and told the stroy of your journey. You lived happily ever after, not knowing the Troll didn't mean any harm.");
+                            break;
+                        default:
+                            console.log("Hey! You must choose between the UPPERCASE choices!");
+                            break;
+                    }
+                }
+        break;
+        
+        
+        
+        
+        
+        case 'BOOK':
+                console.log("A book..... dude? I'm not gonna tell what happened.. a book?!");
+        break;
+        
+        
+        
+        case 'COIN':
+                if(useOfItem === 'TRHOW') {
+                    console.log("You threw the coin, and the Troll happily picked it up and left. Wait, what?");
+                }
+                else{
+                    console.log("The coin fell out of your hands and you lost it. You try to find it, and a minute later you found it. But the Troll already left. Wait, what?");
+                }
+        break;
+        
+        
+        
+        default:
+                console.log("Hey! You must choose between the UPPERCASE choices!");
+                break;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        }
+    break;
+    
+    
+    case 'PAY':
+        var howToPay = prompt("How are you going to pay the Troll? TRHOW money or LEAVE the money and run?").toUpperCase();
+        if(howToPay === 'THROW') {
+            console.log("You threw your bag with money toward the Troll. The Troll happily picked it up, bowed and ran off into the distance.");
+            console.log("");
+            console.log("You are now poor and live in the slums...");
+        }
+        else{
+            console.log("You left your bag with money in front of the Troll. The Troll happily picked it up, bowed and ran off into the distance.");
+            console.log("");
+            console.log("You are now poor and live in the slums...");
+        }
+        break;
+    
+    
+    
+    
+    case 'RUN':
+        confirm("Run? Haha. Sure. A Troll is a thousand times faster! Oooh.. now I understand. You also see those weird mushrooms in front of your feet, do you?");
+        var mushroom = prompt("Are you going to choose for the YELLOW weird shaped mushroom, the BLUE normal-looking mushroom or the RED glowing mushroom?").toUpperCase();
+        switch(mushroom) {
+            case 'YELLOW':
+                console.log("You picked up the yellow mushroom and immediate felt sick. You did run very fast, but after that, the mushroom took your life.");
+                break;
+            
+            
+            
+            
+            case 'BLUE':
+                console.log("You ate the mushroom, but nothing happened. Should've choosed something else... Oh wait! You are turning into... a... bunny? Haha! Really should've chosen something else!");
+                break;
+            
+            
+            case 'RED':
+                console.log("You ate the RED mushroom. Even though it glows, doesn't red always mean something ba.. oh, seems like I was right..");
+                break;
+            default:
+                console.log("Hey! You must choose between the UPPERCASE choices!");
+                break;
+        }
+    break;
+    
+    
+    
+    
+    
+    default:
+        console.log("Hey! You must choose between the UPPERCASE choices!");
+        break;
+}</p><br><br>
+        <h2 id="7">7. "Contact List" - script.JS</h2>
+        <p>
+            var friends = {
+    bill: {
+        firstName: "Bill",
+        lastName: "Billey",
+        address: ["Billtopia", "Billmond", "BILL", "B-I-L-L"],
+        age: 20,
+        number: "NaN",
+        pet: "Dog"
+    },
+    steve: {
+        firstName: "Steve",
+        lastName: "Stevey",
+        address: ["Stevetopia", "Stevemond", "STEVE", "S-T-E-V-E"],
+        age: 25,
+        number: "NaN",
+        pet: "Cat"
+    }
+};
+
+var list = function() {
+    for(var foundFriend in friends) {
+        console.log(foundFriend);
+    }
+};
+
+var search = function(name) {
+    for(var foundFriendName in friends) {
+        if(friends[foundFriendName].firstName === name) {
+            console.log(friends[foundFriendName]);
+            return friends[foundFriendName];
+        }
+    }
+};
+        </p><br><br>
+        <h2 id="8">8. "BuzzFizz till 20" - script.JS</h2>
+        <p>
+            var fizzBuzzNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ,13, 14, 15, 16, 17, 18, 19, 20];
+
+for(var i = 0; i < 20; i++) {
+    if(fizzBuzzNumbers[i] % 3 === 0 && fizzBuzzNumbers[i] % 5 === 0) {
+        console.log("FizzBuzz");
+    }
+    else if(fizzBuzzNumbers[i] % 5 === 0) {
+        console.log("Buzz");
+    }
+    else if(fizzBuzzNumbers[i] % 3 === 0) {
+        console.log("Fizz");
+    }
+    else{
+        console.log(fizzBuzzNumbers[i]);
+    }
+}
+        </p><br><br>
+        <h2 id="9">9. "BuzzFizz till 100 w/ .push" - script.JS</h2>
+        <p>
+            var buzzFizzNumbers = [];
+var limitBuzzFizz = 100;
+
+for(var i = 0; i < limitBuzzFizz; i++) {
+    buzzFizzNumbers.push(i + 1);
+}
+
+for(var i = 0; i < buzzFizzNumbers.length; i++) {
+    if(buzzFizzNumbers[i] % 5 === 0 && buzzFizzNumbers[i] % 3 === 0) {
+        console.log("BuzzFizz!");
+    }
+    else if(buzzFizzNumbers[i] % 5 === 0) {
+        console.log("Buzz!");
+    }
+    else if(buzzFizzNumbers[i] % 3 === 0) {
+        console.log("Fizz!");
+    }
+    else{
+        console.log(buzzFizzNumbers[i]);
+    }
+}
+        </p><br><br>
+        <h2 id="10">10. "Movie Reviews" - script.JS</h2>
+        <p>
+            var getReview = function (movie) {
+    switch(movie) {
+        case 'toy story 2':
+            return "Great story. Mean prospector.";
+            break;
+        case 'finding nemo':
+            return "Cool animation, and funny turtles.";
+            break;
+        case 'the lion king':
+            return "Great songs.";
+            break;
+        default:
+            return "I don't know that movie or I don't have a review of it. I'm sorry.";
+            break;
+    }
+};
+
+var movieReview = prompt("What do you want my review of?").toLowerCase();
+
+console.log(getReview(movieReview));
+        </p><br><br>
+        <h2 id="11">11. "Basic Adress Book (3 Entries)" - script.JS</h2>
+        <p>
+            var bob = {
+    firstName: "Bob",
+    lastName: "Jones",
+    phoneNumber: "(650) 777-7777",
+    email: "bob.jones@example.com"
+};
+
+var mary = {
+    firstName: "Mary",
+    lastName: "Johnson",
+    phoneNumber: "(650) 888-8888",
+    email: "mary.johnson@example.com"
+};
+
+var contacts = [bob, mary];
+
+function printPerson(person) {
+    console.log(person.firstName + " " + person.lastName);
+}
+
+function list() {
+	var contactsLength = contacts.length;
+	for(var i = 0; i < contactsLength; i++) {
+		printPerson(contacts[i]);
+	}
+}
+
+function search(lastName) {
+    var contactsLength = contacts.length;
+    for(var i = 0; i < contactsLength; i++) {
+        if(lastName === contacts[i].lastName) {
+            printPerson(contacts[i]);
+        }
+    }
+}
+
+//search("Jones");
+
+function add(firstName, lastName, phoneNumber, email) {
+    contacts[contacts.length] = {
+        firstName: firstName,
+        lastName: lastName,
+        phoneNumber: phoneNumber,
+        email: email
+    };
+}
+
+//add("John", "Loopers", "(650) 777-7777", "John.Loopers@example.com");
+
+//list();
+        </p><br><br>
+        <h2 id="12">12. "Basic 'Hello'/string filter" - script.JS</h2>
+        <p>var languages = {
+    english: "Hello!",
+    french: "Bonjour!",
+    notALanguage: 4,
+    spanish: "Hola!"
+};
+
+for(var hello in languages) {
+    if(typeof languages[hello] === 'string') {
+        console.log(languages[hello]);
+    }
+}</p><br><br>
+        <h2 id="13">13. "OOP Cash Register w/ Some Basic Functions" - script.JS</h2>
+        <p>
+            function StaffMember(name,discountPercent){
+    this.name = name;
+    this.discountPercent = discountPercent;
+}
+
+var sally = new StaffMember("Sally",5);
+var bob = new StaffMember("Bob",10);
+
+// Create yourself again as 'me' with a staff discount of 20%
+var me = new StaffMember("D. P.", 20);
+
+var cashRegister = {
+    total:0,
+    lastTransactionAmount: 0,
+    add: function(itemCost){
+        this.total += (itemCost || 0);
+        this.lastTransactionAmount = itemCost;
+    },
+    scan: function(item,quantity){
+        switch (item){
+        case "eggs": this.add(0.98 * quantity); break;
+        case "milk": this.add(1.23 * quantity); break;
+        case "magazine": this.add(4.99 * quantity); break;
+        case "chocolate": this.add(0.45 * quantity); break;
+        }
+        return true;
+    },
+    voidLastTransaction : function(){
+        this.total -= this.lastTransactionAmount;
+        this.lastTransactionAmount = 0;
+    },
+    applyStaffDiscount: function(employee) {
+        this.total -= this.total * (employee.discountPercent / 100);
+    }
+};
+
+cashRegister.scan('eggs',1);
+cashRegister.scan('milk',1);
+cashRegister.scan('magazine',1);
+// Apply your staff discount by passing the 'me' object 
+// to applyStaffDiscount
+cashRegister.applyStaffDiscount(me);
+
+// Show the total bill
+console.log('Your bill is '+cashRegister.total.toFixed(2));
+        </p><br><br>
+        <h2 id="14">14. Formulas - script.JS</h2>
+        <li>y = ax + b</li>
+        <p>
+            var a = prompt("What is a? " + " y = ax + b");
+var b = prompt("What is b? " + " y = ax + b");
+var x = prompt("What is x? " + " y = ax + b");
+var ax = a * x;
+var axb = ax + 1 * b;
+
+console.log("y = ax + b");
+console.log("y = a * x + b");
+console.log("y = " + a + " * " + x + " + " + b);
+console.log("y = " + ax + " + " + b);
+console.log("y = " + axb);
+        </p>
+        <li>s = v * t</li>
+        <p>var needed = prompt("What do you need to calculate? s(distance), v(velocity) or t(time)?").toLowerCase();
+
+switch(needed) {
+    case 's':
+        console.log("The formula to calculate s(distance) is: s = v * t");
+        var v = prompt("What is v(velocity)?");
+        var t = prompt("What is t(time)?");
+        console.log("s = " + v + " * " + t);
+        console.log("s = " + v * t + " meter");
+        break;
+    case 'v':
+        console.log("The formula to calculate v(velocity) is:\nv = s / t");
+        var s = prompt("What is s(distance)?");
+        var t = prompt("What is t(time)?");
+        console.log("v = " + s + " / " + t);
+        console.log("v = " + s / t + " meter/second");
+        break;
+    case 't':
+        console.log("The formula to calculate t(time) is:\nt = s / v");
+        var s = prompt("What is s(distance)?");
+        var v = prompt("What is v(velocity)?");
+        console.log("t = " + s + " / " + v);
+        console.log("t = " + s / v + " seconds");
+        break;
+    default:
+        console.log("Make sure you typed v, s or t!");
+        break;
+}</p>
+        <h2 id="15">15. !DRY! "Playing with light switches" - script-JS</h2>
+        <p>
+            confirm("There are ten light bulbs. You can tell me which ones are on! E.G: '4 5' means light bulb number 4 till 5 are on, so 4 and 5 give light!");
+
+var numOne = prompt("What is the first number of light bulbs? 1-10");
+var numTwo = prompt("What is the second number of light bulbs? 1-10");
+
+var one = "- "; 
+var two = "- "; 
+var three = "- "; 
+var four = "- "; 
+var five = "- "; 
+var six = "- "; 
+var seven = "- "; 
+var eight = "- "; 
+var nine = "- "; 
+var ten = "-";
+
+switch(numOne) {
+    case '1':
+        switch(numTwo) {
+            case '1':
+                one = "X ";
+                break;
+            case '2':
+                one = "X ";
+                two = "X ";
+                break;
+            case '3':
+                one = "X ";
+                two = "X ";
+                three = "X ";
+                break;
+            case '4':
+                one = "X ";
+                two = "X ";
+                three = "X ";
+                four = "X ";
+                break;
+            case '5':
+                one = "X ";
+                two = "X ";
+                three = "X ";
+                four = "X ";
+                five = "X ";
+                break;
+            case '6':
+                one = "X ";
+                two = "X ";
+                three = "X ";
+                four = "X ";
+                five = "X ";
+                six = "X ";
+                break;
+            case '7':
+                one = "X ";
+                two = "X ";
+                three = "X ";
+                four = "X ";
+                five = "X ";
+                six = "X ";
+                seven = "X ";
+                break;
+            case '8':
+                one = "X ";
+                two = "X ";
+                three = "X ";
+                four = "X ";
+                five = "X ";
+                six = "X ";
+                seven = "X ";
+                eight = "X ";
+                break;
+            case '9':
+                one = "X ";
+                two = "X ";
+                three = "X ";
+                four = "X ";
+                five = "X ";
+                six = "X ";
+                seven = "X ";
+                eight = "X ";
+                nine = "X ";
+                break;
+            case '10':
+                one = "X ";
+                two = "X ";
+                three = "X ";
+                four = "X ";
+                five = "X ";
+                six = "X ";
+                seven = "X ";
+                eight = "X ";
+                nine = "X ";
+                ten = "X";
+                break;
+            default:
+                console.log("You have to choose 1-10!");
+                break;
+        }
+        break;
+    case '2':
+        switch(numTwo) {
+            case '2':
+                one = "- ";
+                two = "X ";
+                break;
+            case '3':
+                one = "- ";
+                two = "X ";
+                three = "X ";
+                break;
+            case '4':
+                one = "- ";
+                two = "X ";
+                three = "X ";
+                four = "X ";
+                break;
+            case '5':
+                one = "- ";
+                two = "X ";
+                three = "X ";
+                four = "X ";
+                five = "X ";
+                break;
+            case '6':
+                one = "- ";
+                two = "X ";
+                three = "X ";
+                four = "X ";
+                five = "X ";
+                six = "X ";
+                break;
+            case '7':
+                one = "- ";
+                two = "X ";
+                three = "X ";
+                four = "X ";
+                five = "X ";
+                six = "X ";
+                seven = "X ";
+                break;
+            case '8':
+                one = "- ";
+                two = "X ";
+                three = "X ";
+                four = "X ";
+                five = "X ";
+                six = "X ";
+                seven = "X ";
+                eight = "X ";
+                break;
+            case '9':
+                one = "- ";
+                two = "X ";
+                three = "X ";
+                four = "X ";
+                five = "X ";
+                six = "X ";
+                seven = "X ";
+                eight = "X ";
+                nine = "X ";
+                break;
+            case '10':
+                one = "- ";
+                two = "X ";
+                three = "X ";
+                four = "X ";
+                five = "X ";
+                six = "X ";
+                seven = "X ";
+                eight = "X ";
+                nine = "X ";
+                ten = "X";
+                break;
+            default:
+                console.log("You have to choose 1-10!");
+                break;
+        }
+        break;
+    case '3':
+        switch(numTwo) {
+            case '3':
+                three = "X ";
+                break;
+            case '4':
+                three = "X ";
+                four = "X ";
+                break;
+            case '5':
+                three = "X ";
+                four = "X ";
+                five = "X ";
+                break;
+            case '6':
+                three = "X ";
+                four = "X ";
+                five = "X ";
+                six = "X ";
+                break;
+            case '7':
+                three = "X ";
+                four = "X ";
+                five = "X ";
+                six = "X ";
+                seven = "X ";
+                break;
+            case '8':
+                three = "X ";
+                four = "X ";
+                five = "X ";
+                six = "X ";
+                seven = "X ";
+                eight = "X ";
+                break;
+            case '9':
+                three = "X ";
+                four = "X ";
+                five = "X ";
+                six = "X ";
+                seven = "X ";
+                eight = "X ";
+                nine = "X ";
+                break;
+            case '10':
+                three = "X ";
+                four = "X ";
+                five = "X ";
+                six = "X ";
+                seven = "X ";
+                eight = "X ";
+                nine = "X ";
+                ten = "X";
+                break;
+            default:
+                console.log("You have to choose 1-10!");
+                break;
+        }
+        break;
+    case '4':
+        switch(numTwo) {
+            case '4':
+                four = "X ";
+                break;
+            case '5':
+                four = "X ";
+                five = "X ";
+                break;
+            case '6':
+                four = "X ";
+                five = "X ";
+                six = "X ";
+                break;
+            case '7':
+                four = "X ";
+                five = "X ";
+                six = "X ";
+                seven = "X ";
+                break;
+            case '8':
+                four = "X ";
+                five = "X ";
+                six = "X ";
+                seven = "X ";
+                eight = "X ";
+                break;
+            case '9':
+                four = "X ";
+                five = "X ";
+                six = "X ";
+                seven = "X ";
+                eight = "X ";
+                nine = "X ";
+                break;
+            case '10':
+                four = "X ";
+                five = "X ";
+                six = "X ";
+                seven = "X ";
+                eight = "X ";
+                nine = "X ";
+                ten = "X";
+                break;
+            default:
+                console.log("You have to choose 1-10!");
+                break;
+        }
+        break;
+    case '5':
+        switch(numTwo) {
+            case '5':
+                five = "X ";
+                break;
+            case '6':
+                five = "X ";
+                six = "X ";
+                break;
+            case '7':
+                five = "X ";
+                six = "X ";
+                seven = "X ";
+                break;
+            case '8':
+                five = "X ";
+                six = "X ";
+                seven = "X ";
+                eight = "X ";
+                break;
+            case '9':
+                five = "X ";
+                six = "X ";
+                seven = "X ";
+                eight = "X ";
+                nine = "X ";
+                break;
+            case '10':
+                five = "X ";
+                six = "X ";
+                seven = "X ";
+                eight = "X ";
+                nine = "X ";
+                ten = "X";
+                break;
+            default:
+                console.log("You have to choose 1-10!");
+                break;
+        }
+        break;
+    case '6':
+        switch(numTwo) {
+            case '6':
+                six = "X ";
+                break;
+            case '7':
+                six = "X ";
+                seven = "X ";
+                break;
+            case '8':
+                six = "X ";
+                seven = "X ";
+                eight = "X ";
+                break;
+            case '9':
+                six = "X ";
+                seven = "X ";
+                eight = "X ";
+                nine = "X ";
+                break;
+            case '10':
+                six = "X ";
+                seven = "X ";
+                eight = "X ";
+                nine = "X ";
+                ten = "X";
+                break;
+            default:
+                console.log("You have to choose 1-10!");
+                break;
+        }
+        break;
+    case '7':
+        switch(numTwo) {
+            case '7':
+                seven = "X ";
+                break;
+            case '8':
+                seven = "X ";
+                eight = "X ";
+                break;
+            case '9':
+                seven = "X ";
+                eight = "X ";
+                nine = "X ";
+                break;
+            case '10':
+                seven = "X ";
+                eight = "X ";
+                nine = "X ";
+                ten = "X";
+                break;
+            default:
+                console.log("You have to choose 1-10!");
+                break;
+        }
+        break;
+    case '8':
+        switch(numTwo) {
+            case '8':
+                eight = "X ";
+                break;
+            case '9':
+                eight = "X ";
+                nine = "X ";
+                break;
+            case '10':
+                eight = "X ";
+                nine = "X ";
+                ten = "X";
+                break;
+            default:
+                console.log("You have to choose 1-10!");
+                break;
+        }
+        break;
+    case '9':
+        switch(numTwo) {
+            case '9':
+                nine = "X ";
+                break;
+            case '10':
+                nine = "X ";
+                ten = "X";
+                break;
+            default:
+                console.log("You have to choose 1-10!");
+                break;
+        }
+        break;
+    case '10':
+        switch(numTwo) {
+            case '10':
+                ten = "X";
+                break;
+            default:
+                console.log("You have to choose 1-10!");
+                break;
+        }
+        break;
+    default:
+        console.log("You have to choose 1-10!");
+        break;
+};
+
+console.log(one + two + three + four + five + six + seven + eight + nine + ten);
+        </p>
+        <h2 id="16">16. "Card Flipper with user input" - script.JS</h2>
+        <p><br><br>
+            var wantedCard = prompt('What card do you want? Choose from: Diamond - Spade - Heart - Club.').toUpperCase();
+
+
+if(wantedCard === 'DIAMOND' || wantedCard === 'SPADE' || wantedCard === 'HEART' || wantedCard === 'CLUB') {
+    while(currentCard !== wantedCard) {
+        var cards = ['DIAMOND', 'SPADE', 'HEART', 'CLUB'];
+        var randomNumber = Math.floor(Math.random() * 4);
+        var currentCard = cards[randomNumber];
+        
+        console.log('The current card is: ' + currentCard);
+        currentCard = cards[randomNumber];
+    }
+}
+else{
+    console.log("Sorry, but your input was invalid.");
+}
+console.log('Found a ' + wantedCard + '!');
+        </p><br><br>
+        <h2 id="17">17. "String Reverser 1-10 letters" - script.JS</h2>
+        <p>
+            var string = prompt("Insert any string you like. It has to be 1-10 letters long!");
+var reverse = [];
+var stringLength = string.length;
+
+for(var i = 0; i < string.length; i++) {
+reverse.push(string.[string.length - (1 + i)]);
+}
+
+switch(stringLength) {
+case 1:
+console.log(reverse[0]);
+break;
+case 2:
+console.log(reverse[0] + reverse[1]);
+break;
+case 3:
+console.log(reverse[0]+ reverse[1]+ reverse[2]);
+break;
+case 4:
+console.log(reverse[0]+ reverse[1]+ reverse[2]+ reverse[3]);
+break;
+case 5:
+console.log(reverse[0]+ reverse[1]+ reverse[2]+ reverse[3]+ reverse[4]);
+break;
+case 6:
+console.log(reverse[0]+ reverse[1]+ reverse[2]+ reverse[3]+ reverse[4]+ reverse[5]);
+case 7:
+console.log(reverse[0]+ reverse[1]+ reverse[2]+ reverse[3]+ reverse[4]+ reverse[5]+ reverse[6]);
+break;
+case 8:
+console.log(reverse[0]+ reverse[1]+ reverse[2]+ reverse[3]+ reverse[4]+ reverse[5]+ reverse[6]+ reverse[7]);
+break;
+case 9:
+console.log(reverse[0]+ reverse[1]+ reverse[2]+ reverse[3]+ reverse[4]+ reverse[5]+ reverse[6]+ reverse[7]+ reverse[8]);
+break;
+case 10:
+console.log(reverse[0]+ reverse[1]+ reverse[2]+ reverse[3]+ reverse[4]+ reverse[5]+ reverse[6]+ reverse[7]+ reverse[8]+ reverse[9]);
+break;
+default:
+console.log("Did you make sure your string is 1-10 letters long?");
+break;
+}
+        </p>
+        <h2 id="18">18. "Password generator 10 letters" - script.JS</h2>
+        <p>
+            var string = "abcdefghijklmnopqrstuvwxyz1234567890";
+var password = [];
+
+for(var i = 0; i < 10; i++) {
+    var randomNum = Math.floor(Math.random() * 35);
+    password.push(string[randomNum]);
+}
+
+console.log(password[0] + password[1] + password[2] + password[3] + password[4] + password[5] + password[6] + password[7] + password[8] + password[9]);
+        </p><br><br>
+        <h2 id="19">19. "Password Protection" w/ comments - script.JS</h2>
+        <p>
+            //any username the User likes
+var inputUsername = prompt("What is your username?");
+//this is the password that the user fills in
+var inputPassword = prompt("What is the password?");
+//this is the correst password
+var password = "Dinozzo";
+
+//if the passwords match, run this block of code:
+if(inputPassword === password) {
+    //tell the user he/she succesfully logged in
+    console.log("Succesfully logged in, " + inputUsername + ".");
+}
+//if the passwords don't match, run this code:
+else{
+    //tell the user that the passwords don't match
+    console.log("Sorry, but it seems " + inputUsername + " and " + inputPassword + " don't match. Try again please.");
+}
+        </p><br><br>
+        <h2 id="20">20. "Basic 10 words translator Dutch-German" w/ comments - script.JS</h2>
+        <p>
+            //ask input for what the user wants to have translated
+var choice = prompt("What do you want to have translated into German? [Input: Dutch] ? Choose: 'numbers', 'words'.").toLowerCase();
+//space-equals-space shortcut
+var s = " = ";
+//numbers till 20
+var num20 = ['null', 'eins', 'zwei', 'drei', 'vier', 'fünf', 'sechs', 'sieben', 'acht', 'neun', 'zehn', 'elf', 'zwölf', 'dreizehn', 'vierzehn', 'fünfzehn', 'sechzehn', 'siebzehn', 'achtzehn', 'neunzehn', 'zwanzig'];
+//numbers till 100
+var num100 = ['zwanzig', 'dreißig', 'vierzig', 'fünfzig', 'sechzig', 'siebzig', 'achtzig', 'neunzig', 'hundert'];
+//numbers till 1000
+var num1000 = ['hundert', 'zweihundert', 'dreihundert', 'vierhundert', 'fünfhundert', 'sechshundert', 'siebenhundert', 'achthundert', 'neunhundert', 'tausend'];
+//dutch words -- last: Kapitel:1 - Lernbox:1
+var words = ['volhouden', 'vrolijk', 'lukken', 'het eiland', 'oplossen', 'nooit', 'de vakantie', 'het plezier', 'grappig', 'tekenen'];
+//german words -- translated
+var words2 = ['durchhalten', 'fröhlich', 'gelingen', 'die Insel', 'lösen', 'niemals', 'der Urlaub', 'das Vergnügen', 'witzig', 'zeichnen'];
+//the total number of words that can be translated
+var totalWords = words.length;
+
+
+//look for what the user input was
+switch(choice) {
+    //if the input was 'numbers'
+    case 'numbers':
+        //ask which numbers the user wants translated
+        var num = prompt("Which numbers would you like to have translated? 0-20, 20-100, 100-1000, all");
+        switch(num) {
+            //if the user wants 0-20, run:
+            case '0-20':
+                for(var i = 0; i < 21; i++) {
+                    //log the number and the translation
+                    console.log(i+s+num20[i]);
+                }
+                break;
+            //if the user wants 20-100, run:
+            case '20-100':
+                for(var i = 20; i < 101; i += 10) {
+                    //log the number and the translation
+                    console.log(i+s+num100[i/10-2]);
+                }
+                break;
+            //if the user wants 100-1000, run:
+            case '100-1000':
+                for(var i = 100; i < 1001; i+= 100) {
+                    //log the number and the translation
+                    console.log(i+s+num1000[i/100-1]);
+                }
+                break;
+            //if the user wants all, run:
+            case 'all':
+                for(var i = 0; i < 21; i++) {
+                    console.log(i+s+num20[i]);
+                }
+                for(var i = 30; i < 101; i += 10) {
+                    console.log(i+s+num100[i/10-2]);
+                }
+                for(var i = 200; i < 1001; i+= 100) {
+                    console.log(i+s+num1000[i/100-1]);
+                }
+                break;
+            //if the user input was invalid, run:
+            default:
+                console.log("Be sure to have typed: '0-20', '20-100' or '100-1000'!");
+                break;
+        }
+        break;
+    //if the user chose 'words', run:
+    case 'words':
+        //ask what word the user wants to see translated
+        var userWord = prompt("What word would you like to see translated? There are " + totalWords + " words that can be translated.").toLowerCase();
+        //check if the user input equals any of the translated words
+        for(var i = 0; i < words.length; i++) {
+            //if it matches:
+            if(userWord === words[i]) {
+                //log the input and translation
+                console.log(userWord+s+words2[i]);
+                //make sure the program doesn't run anymore if it found the word
+                i = words.length;
+            }
+            //if it doesn't match:
+            else if(i === words.length) {
+                //if the word isn't translated, log:
+                console.log("Oops! Looks like the translator doesn't have that word yet or you wrote it wrong. I'm sorry.");
+            }
+        }
+        break;
+}
+        </p><br><br>
+        <h2 id="21">21. "Defeat the Cyclop! Game" w/ comments - script.JS</h2>
+        <p>
+            //ask for the user's name
+var name = prompt("What is your name? Make it less than 10 letters long!");
+//default
+var playable = true;
+//check if the name isn't too long
+if(name.length > 10) {
+    //if it is too long, set playable to false
+    playable = false;
+    //and log:
+    console.log("Sorry, but it seems your name was too long!");
+}
+//this holds the current game
+var game = 1;
+//this will be used later when the player won or not
+var won;
+//this will be used to let the user play multiple games
+var newGame;
+
+//the battle function
+function cyclopBattle(name, power, luck) {
+    //The first information given, and asked if the player is ready:
+    var ready = confirm("The gods were bored, and thought of a game to overwin the boredom. They used three creatures: A player (YOU), a Cyclop (The bad one) and a fairy (THAT'S ME!). To win the game, you must defeat the Cyclop! Are you ready?");
+    //check if the player isn't ready
+    if(ready === false) {
+        //then log:
+        console.log("Too bad. The Gods won't be satisfied.");
+    }
+    //if the player is ready, then START THE GAME!
+    else{
+        //second information for the player
+        confirm("Good! Now, the Gods will roll a dice! If the dice rolls good, you will have good powerups. But, if the dice rolls bad, you will get down-creased stats.. But don't worry, only the least chance will give down-creased stats!");
+        //this will resemble the dice
+        var compNum = Math.random();
+        //now check for the dice's outcome
+        //perfect:
+        if(compNum >= 0.85) {
+            confirm("The dice rolles.... Perfect! You'll get massive power-ups!");
+            power += 2;
+            luck += 2;
+        }
+        //good:
+        else if(compNum >= 0.5) {
+            confirm("The dice rolles.... Good! You'll get normal power-ups!");
+            power += 1;
+            luck += 1;
+        }
+        //bad:
+        else if(compNum >= 0.15) {
+            confirm("The dice rolles.... Bad! You don't get any decreases, don't worry! You'll still get one bit of a power-up.");
+            luck += 1;
+        }
+        //worst
+        else if(compNum >= 0.0) {
+            confirm("The dice rolles.... Worst! You'll get massive decreases now!");
+            power -= 2;
+            luck -= 1;
+        }
+        //now start declaring heatlh, dmg and luck
+        //Cyclop:
+        //Health:
+        var cHealth = 20;
+        //Damage:
+        var cPow = 5;
+        //Luck:
+        var cLuck = 1;
+        
+        //Player:
+        //Health:
+        var pHealth = luck * 5 + 15;
+        //Damage:
+        var pPow = power + 5;
+        //Luck:
+        var pLuck = luck;
+        //end of declaring health, dmg and luck
+        //this holds the total dmg done by the player:
+        var totalpDmg = 0;
+        //this holds the total dmg done by the Cyclop:
+        var totalcDmg = 0;
+        
+        //this var holds the number of rounds passed:
+        var round = 0;
+        
+        //this var will stop the game if it is over:
+        //it is set to true so the game can begin
+        var gameOn = true;
+        
+        //while cyclop is alive, run...
+        while(gameOn === true) {
+            //declare a new var, holding dmg done this round
+            var pDmg = Math.floor(Math.random()*2) + pPow;
+            //now one for the Cyclop:
+            var cDmg = Math.floor(Math.random()*2) + cPow;
+            
+            //now update the total damage variables:
+            totalpDmg += pDmg;
+            totalcDmg += cDmg;
+            
+            //now decrease the players and the Cyclops health
+            pHealth -= cDmg;
+            cHealth -= pDmg;
+            
+            //add 1 to the round
+            round++;
+            
+            //log everything that happened this round:
+            //log the current game IF the player started anew:
+            if(game > 1) {
+                console.log("Game " + game + ":");
+            }
+            
+            //log the current round
+            console.log("Round " + round + ":");
+            //log the damage done and health left:
+            console.log("The Cyclop did " + cDmg + " damage!");
+            console.log("You did " + pDmg + " damage!");
+            console.log("The Cyclop has " + cHealth + " health left!");
+            console.log("You have " + pHealth + " health left!");
+            //make sure if the player or Cyclop is beaten, the game stops:
+            if(pHealth <= 0) {
+                pHealth = 0;
+                gameOn = false;
+                console.log("\nYou first ran out of hp! What a shame! Atleast the Gods had some fun watching you lose!");
+                won = false;
+            }
+            if(cHealth <= 0 && pHealth > 0) {
+                cHealth = 0;
+                gameOn = false;
+                console.log("\nCongratulations " + name + "! You succesfully beat the Cyclop and won the game! The Gods admire your bravery!");
+                won = true;
+            }
+        }
+        //run if the game is over
+        if(gameOn === false) {
+            //show some battle stats as an extra
+            console.log("\nThe stats:\nDamage done by you: "+totalpDmg+".\nDamage done by Cyclop: "+totalcDmg+".");
+            
+            //ask if the player wants to start over again, but with a bonus
+            newGame = prompt("Won: "+won+"\nDo you want to start anew? you'll get an extra bonus! Type: YES or NO").toUpperCase();
+        }
+        //beware, the end of the FIRST else!
+    }
+    //the end of the function
+}
+//if playable equals true, play the game with name: the input's name, power: 0 and luck: 0
+if(playable === true) {
+    cyclopBattle(name, 0, 0);
+}
+//if the player wants to play a new game
+if(newGame === 'YES') {
+    //play the game again, with now the POWER attribute as GAME, so game 2 will give +1 power
+    cyclopBattle(name, game - 1, 0);
+    //set newGame to NO
+    newGame = 'NO';
+}
+        </p><br><br>
+        
+        
+        
+        <br><br>
+        <h1>python</h1>
+        
+        
+        
+        
+        
+        
+        
+        
+    </body>
 
 </html>
