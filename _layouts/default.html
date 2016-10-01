@@ -51,12 +51,28 @@
     ellipse(50, 50, 25, 25);
     println('hello web!');
   }
- </script>
-		<canvas id="pjs" style="height: 400px; width:400px" data-processing-sources="my-first-thingy.pde"></canvas>
-			
+ 		</script>
 		
-		<script src="processing-1.3.6.min.js"></script>
-		<canvas data-processing-sources="my-first-thingy.pde"></canvas>
-		<iframe id='ifr' width='300' height='335' scrolling='no' style='background: url(//studio.processingtogether.com/static/img/jun09/pad/connectingbar.gif) no-repeat center 60px;' src='//studio.processingtogether.com/sp/pad/iframe/ro.9b9CM4tFgeqMa/rev.81?autostart=0'></iframe>
+		<canvas id="pjs" style="height: 400px; width:400px"></canvas>
+		
+		
+		
+		<h1>A Processing.js Example</h1>
+<script type="application/processing">
+void setup()
+{
+  size(300, 300);  // Size should be the first statement
+  stroke(255);     // Set line drawing color to white
+  frameRate(90);
+}
+float y = 100;
+void draw()
+{
+  background(0);   // Set the background to black
+  y = y - 1;
+  if (y < 0) { y = height; }
+  line(0, y, width, y);
+}
+</script><canvas></canvas>
 	</body>
 </html>
